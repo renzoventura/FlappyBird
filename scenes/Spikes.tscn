@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Spike.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Spikes.gd" type="Script" id=2]
+[ext_resource path="res://scenes/PointSpace.tscn" type="PackedScene" id=3]
+
+[node name="Spikes" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TopSpike" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -448 )
+
+[node name="Spacer" parent="." instance=ExtResource( 3 )]
+
+[node name="BottomSpike" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 448 )
