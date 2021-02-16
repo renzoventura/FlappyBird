@@ -8,9 +8,7 @@
 script = ExtResource( 2 )
 
 [node name="TopSpike" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, -448 )
 
 [node name="Spacer" parent="." instance=ExtResource( 3 )]
 
 [node name="BottomSpike" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, 448 )
