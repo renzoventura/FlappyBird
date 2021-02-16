@@ -1,10 +1,10 @@
 extends Node2D
 
 
-var SPEED = 5;
+var SPEED = 4;
 var motion = Vector2(0,0)
 var gap_sizes = [900, 1000, 850]
-var random_centers = [100, 200, 300, 350]
+var random_centers = [100, 200, 300, 400]
 var current_gap_size;
 onready var topSpike = $TopSpike;
 onready var bottomSpike = $BottomSpike;
