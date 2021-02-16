@@ -30,7 +30,7 @@ position = Vector2( 455.593, 709.269 )
 position = Vector2( 423.294, -274.401 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 1.8
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 297.058, 508.433 )

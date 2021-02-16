@@ -1,7 +1,8 @@
 extends Node2D
 
 
-var SPEED = 4;
+var SPEED
+var DEFAULT_SPEED = 4
 var motion = Vector2(0,0)
 var gap_sizes = [900, 1000, 850]
 var random_centers = [100, 200, 300, 400]
@@ -14,10 +15,11 @@ func _ready():
 	topSpike.position.y = topSpike.position.y + (current_gap_size/2)
 	bottomSpike.position.y = bottomSpike.position.y - (current_gap_size/2)
 	position.y = random_centers[randi() % random_centers.size()]
-	pass 
-	
+
 func _process(delta):
 	move()
 
 func move():
+	if (SPEED == null):
+		SPEED = DEFAULT_SPEED
 	position.x -= SPEED
