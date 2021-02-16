@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/Spike.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 29.5091, 29.1678 )
+extents = Vector2( 29.3579, 31.4897 )
 
 [node name="Spike" type="Area2D"]
 scale = Vector2( 1, 10 )
