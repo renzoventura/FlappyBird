@@ -12,30 +12,36 @@
 script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 146.816, 522.666 )
+position = Vector2( 144, 528 )
+z_index = 1
 
 [node name="Spikes" type="Node2D" parent="."]
-position = Vector2( -133.113, 294.657 )
+position = Vector2( -135, 295 )
 
 [node name="Spikes" parent="Spikes" instance=ExtResource( 3 )]
-position = Vector2( 1068.82, 240.779 )
+position = Vector2( 1525, 235 )
 
 [node name="Floors" type="Node2D" parent="."]
 position = Vector2( -133.113, 294.657 )
 
 [node name="Floor" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 455.593, 709.269 )
+position = Vector2( 437.113, 825.343 )
+scale = Vector2( 40, 1 )
 
 [node name="Floor2" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 423.294, -274.401 )
+position = Vector2( 461.113, -382.657 )
+scale = Vector2( 40, 1 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.8
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 297.058, 508.433 )
+position = Vector2( 288, 520 )
+current = true
+zoom = Vector2( 2, 2 )
 
 [node name="OutOfBounds" type="Node2D" parent="."]
+position = Vector2( -576, -16 )
 
 [node name="OutOfBounds" parent="OutOfBounds" instance=ExtResource( 5 )]
 position = Vector2( -437.513, 531.475 )

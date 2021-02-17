@@ -21,12 +21,8 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/width=600
-window/size/height=1024
-window/size/test_width=300
-window/size/test_height=512
 window/stretch/mode="viewport"
-window/stretch/aspect="keep"
+window/stretch/aspect="expand"
 
 [input]
 

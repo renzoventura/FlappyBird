@@ -1,6 +1,6 @@
 extends Node2D
 
-var middleSpawnPoint = Vector2(1068.819946, 240.779007)
+var middleSpawnPoint = Vector2(1525, 295)
 
 onready var timer = $Timer
 onready var spikes = $Spikes/Spikes
@@ -43,3 +43,6 @@ func increase_spike_speed():
 func decrease_spawn_time():
 	if(timer.wait_time > MIN_DELAY_TIME):
 		timer.wait_time -= less_delay
+
+func stop_spawning():
+	timer.stop()

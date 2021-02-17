@@ -8,14 +8,17 @@ var MAX_FALL_SPEED = 2000;
 var motion = Vector2(0,0)
 var motion_up = Vector2(0,-1)
 
+var dead = false
+
 func _ready():
 	pass 
 	
-	
 func _process(delta):
+	update_rotation()
 	apply_gravity()
 	#move()
-	jump();
+	if(!dead):
+		jump();
 	move_and_slide(motion, motion_up)
 	
 func jump():
@@ -38,3 +41,18 @@ func move():
 		motion.x = SPEED
 	else:
 		motion.x = 0
+
+func died():
+	dead = true
+
+func update_rotation():
+	print(motion.y)
+	if(motion.y < 0):
+		rotation_degrees = 0
+		return
+	elif (motion.y < 120):
+		rotation_degrees = 20
+		return
+	elif (motion.y < 240):
+		return
+		rotation_degrees = 40
