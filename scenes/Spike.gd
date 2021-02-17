@@ -1,6 +1,6 @@
 extends Area2D
 
-onready var oofSfx = $Oof
+
 func _on_Spike_body_entered(body):
 	if (body.name == "Player"):
 		get_tree().call_group("Player", "died")
