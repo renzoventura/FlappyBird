@@ -12,8 +12,7 @@ var less_delay = 0.2
 var spike_speed = 4
 
 func _ready():
-	if (not BackgroundMusicScene.playing):
-		BackgroundMusicScene.play_game_music()
+	BackgroundMusicScene.play_game_music()
 	timer.start()
 
 func generate_hazard():
@@ -51,3 +50,12 @@ func stop_spawning():
 
 func update_point_gui():
 	get_tree().call_group("PointLabels", "updatepoints", POINT)
+
+func show_death_gui():
+	for i in range(0, $GUI.get_child_count()):
+		$GUI.get_child(i).queue_free()
+	var death_gui = preload("res://scenes/DeathGUI.tscn")
+	$GUI.add_child(death_gui.instance())
+
+func restart():
+	get_tree().reload_current_scene()

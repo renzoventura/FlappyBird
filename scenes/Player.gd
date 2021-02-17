@@ -51,6 +51,7 @@ func died():
 	if(!dead):
 		oofSfx.play()
 	dead = true
+	get_tree().call_group("Level", "show_death_gui")
 
 func update_rotation():
 	if(motion.y < 0):

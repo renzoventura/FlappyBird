@@ -22,6 +22,12 @@ position = Vector2( -135, 295 )
 [node name="Spikes" parent="Spikes" instance=ExtResource( 3 )]
 position = Vector2( 1525, 235 )
 
+[node name="Spikes2" parent="Spikes" instance=ExtResource( 3 )]
+position = Vector2( 63, 225 )
+
+[node name="Spikes3" parent="Spikes" instance=ExtResource( 3 )]
+position = Vector2( -393, 225 )
+
 [node name="Floors" type="Node2D" parent="."]
 position = Vector2( -133.113, 294.657 )
 

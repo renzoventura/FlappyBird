@@ -1,12 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/Label.gd" type="Script" id=1]
+[ext_resource path="res://scenes/point_font.tres" type="DynamicFont" id=2]
 
 [node name="PointLabel" type="Label" groups=[
 "PointLabels",
 ]]
 margin_right = 1024.0
 margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0.976471, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "0"
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
