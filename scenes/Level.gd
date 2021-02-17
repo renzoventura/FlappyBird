@@ -12,6 +12,8 @@ var less_delay = 0.2
 var spike_speed = 4
 
 func _ready():
+	if (not BackgroundMusicScene.playing):
+		BackgroundMusicScene.play_game_music()
 	timer.start()
 
 func generate_hazard():

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Floor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Spikes.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Level.gd" type="Script" id=4]
 [ext_resource path="res://scenes/OutOfBounds.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=6]
 
 [node name="Level" type="Node2D" groups=[
 "Level",
@@ -45,4 +46,8 @@ position = Vector2( -576, -16 )
 
 [node name="OutOfBounds" parent="OutOfBounds" instance=ExtResource( 5 )]
 position = Vector2( -437.513, 531.475 )
+
+[node name="GUI" type="Node2D" parent="."]
+
+[node name="GUI" parent="GUI" instance=ExtResource( 6 )]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

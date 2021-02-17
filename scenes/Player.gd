@@ -10,6 +10,10 @@ var motion_up = Vector2(0,-1)
 
 var dead = false
 
+onready var oofSfx = $Oof
+onready var jumpSfx = $Jump
+var pitch_scales = [0.9, 1.0, 1.2, 1.4]
+
 func _ready():
 	pass 
 	
@@ -22,7 +26,8 @@ func _process(delta):
 	move_and_slide(motion, motion_up)
 	
 func jump():
-	if Input.is_action_just_pressed("up"):
+	if (Input.is_action_just_pressed("up") and !dead):
+		play_jump()
 		motion.y = -SPEED
 		
 func apply_gravity():
@@ -43,10 +48,11 @@ func move():
 		motion.x = 0
 
 func died():
+	if(!dead):
+		oofSfx.play()
 	dead = true
 
 func update_rotation():
-	print(motion.y)
 	if(motion.y < 0):
 		rotation_degrees = 0
 		return
@@ -56,3 +62,8 @@ func update_rotation():
 	elif (motion.y < 240):
 		return
 		rotation_degrees = 40
+
+
+func play_jump():
+	jumpSfx.pitch_scale = pitch_scales[randi() % pitch_scales.size()]
+	jumpSfx.play()
