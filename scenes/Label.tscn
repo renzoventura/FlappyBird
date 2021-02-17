@@ -2,7 +2,9 @@
 
 [ext_resource path="res://scenes/Label.gd" type="Script" id=1]
 
-[node name="Label" type="Label"]
+[node name="PointLabel" type="Label" groups=[
+"PointLabels",
+]]
 margin_right = 1024.0
 margin_bottom = 14.0
 script = ExtResource( 1 )

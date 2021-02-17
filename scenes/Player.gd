@@ -54,7 +54,7 @@ func died():
 
 func update_rotation():
 	if(motion.y < 0):
-		rotation_degrees = 0
+		rotation_degrees = -10
 		return
 	elif (motion.y < 120):
 		rotation_degrees = 20

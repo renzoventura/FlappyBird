@@ -29,8 +29,8 @@ func _on_Timer_timeout():
 
 func addPoint():
 	POINT += 1
-	print(POINT)
 	adjust_game()
+	update_point_gui()
 
 func adjust_game():
 	if ((POINT % 5) == 0):
@@ -48,3 +48,6 @@ func decrease_spawn_time():
 
 func stop_spawning():
 	timer.stop()
+
+func update_point_gui():
+	get_tree().call_group("PointLabels", "updatepoints", POINT)
