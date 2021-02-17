@@ -12,6 +12,9 @@ var dead = false
 
 onready var oofSfx = $Oof
 onready var jumpSfx = $Jump
+onready var playerSprite = $PlayerSprite
+onready var playerShape = $CollisionShape2D
+onready var particles = $Particles2D
 var pitch_scales = [0.9, 1.0, 1.2, 1.4]
 
 func _ready():
@@ -28,6 +31,7 @@ func _process(delta):
 func jump():
 	if (Input.is_action_just_pressed("up") and !dead):
 		play_jump()
+
 		motion.y = -SPEED
 		
 func apply_gravity():
@@ -58,15 +62,20 @@ func died():
 
 func update_rotation():
 	if(motion.y < 0):
-		rotation_degrees = -10
+		playerSprite.rotation_degrees = -10
+		playerShape.rotation_degrees = -10
+		particles.emitting = true;
 		return
 	elif (motion.y < 120):
-		rotation_degrees = 20
+		playerSprite.rotation_degrees = 20
+		playerShape.rotation_degrees = 20
+		particles.emitting = true;
 		return
 	elif (motion.y < 240):
+		playerSprite.rotation_degrees = 40
+		playerShape.rotation_degrees = 40
+		particles.emitting = false;
 		return
-		rotation_degrees = 40
-
 
 func play_jump():
 	jumpSfx.pitch_scale = pitch_scales[randi() % pitch_scales.size()]

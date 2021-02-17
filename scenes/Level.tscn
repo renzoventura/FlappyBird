@@ -11,8 +11,12 @@
 ]]
 script = ExtResource( 4 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
+[node name="PlayerNodes" type="Node2D" parent="."]
 position = Vector2( 144, 528 )
+scale = Vector2( 0.9, 0.9 )
+
+[node name="Player" parent="PlayerNodes" instance=ExtResource( 1 )]
+scale = Vector2( 1, 1 )
 z_index = 1
 
 [node name="Spikes" type="Node2D" parent="."]
