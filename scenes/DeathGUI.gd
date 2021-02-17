@@ -22,3 +22,7 @@ func _on_retry_mouse_exited():
 	pass
 #	print("exit")
 #	retry_button.add_color_override("font_color", BLACK)
+		
+func _input(event):
+	if event.is_action_pressed("up"):
+		get_tree().call_group("Level", "restart")

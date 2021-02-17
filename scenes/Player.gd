@@ -49,6 +49,7 @@ func move():
 
 func died():
 	if(!dead):
+		oofSfx.pitch_scale = pitch_scales[randi() % pitch_scales.size()]
 		oofSfx.play()
 	dead = true
 	get_tree().call_group("Level", "show_death_gui")
