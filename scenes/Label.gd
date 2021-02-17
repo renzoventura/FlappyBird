@@ -3,8 +3,11 @@ extends Label
 var points
 
 func _ready():
-	points = "0"
-	text = points
+	points = BackgroundMusicScene.POINTS
+	print("READY: " + str(points))
+	if (points == null):
+		points = "0"
+	text = str(points)
 	
 func updatepoints(point):
 	points = point

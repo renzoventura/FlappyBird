@@ -38,8 +38,12 @@ scale = Vector2( 40, 1 )
 position = Vector2( 461.113, -382.657 )
 scale = Vector2( 40, 1 )
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="Timers"]
 wait_time = 1.8
+
+[node name="DeathTimer" type="Timer" parent="Timers"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 288, 520 )
@@ -53,4 +57,5 @@ position = Vector2( -576, -16 )
 position = Vector2( -437.513, 531.475 )
 
 [node name="GUI" type="Node2D" parent="."]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timers/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timers/DeathTimer" to="." method="_on_DeathTimer_timeout"]

@@ -52,7 +52,9 @@ func died():
 		oofSfx.pitch_scale = pitch_scales[randi() % pitch_scales.size()]
 		oofSfx.play()
 	dead = true
-	get_tree().call_group("Level", "show_death_gui")
+	BackgroundMusicScene.stop()
+	get_tree().call_group("Level", "timer_death_gui")
+	
 
 func update_rotation():
 	if(motion.y < 0):

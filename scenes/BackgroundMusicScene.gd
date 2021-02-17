@@ -2,6 +2,8 @@ extends AudioStreamPlayer
 
 const game_music = "res://background.ogg"
 
+var POINTS = 0;
+
 func _ready():
 	self.set_pause_mode(2)
 	set_process(true)

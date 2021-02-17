@@ -2,13 +2,14 @@ extends Node2D
 
 var middleSpawnPoint = Vector2(1525, 295)
 
-onready var timer = $Timer
+onready var timer = $Timers/Timer
+onready var deathTimer = $Timers/DeathTimer
 onready var spikes = $Spikes/Spikes
 const MAX_SPIKE_SPEED = 8
 const MIN_DELAY_TIME = 1
 var POINT = 0
 var additional_speed = 0.2
-var less_delay = 0.2
+var less_delay = 0.15
 var spike_speed = 4
 
 func _ready():
@@ -30,13 +31,18 @@ func _on_Timer_timeout():
 
 func addPoint():
 	POINT += 1
+	BackgroundMusicScene.POINTS = POINT
 	adjust_game()
 	update_point_gui()
 
+func get_point():
+	print("GET POINT!!!" + str(POINT))
+	return POINT
+	
 func adjust_game():
 	if ((POINT % 5) == 0):
 		increase_spike_speed()
-	if ((POINT % 10) == 0):
+	if ((POINT % 5) == 0):
 		decrease_spawn_time()
 
 func increase_spike_speed():
@@ -51,6 +57,7 @@ func stop_spawning():
 	timer.stop()
 
 func update_point_gui():
+	print("Upate point: " + str(POINT))
 	get_tree().call_group("PointLabels", "updatepoints", POINT)
 
 func showGameGui():
@@ -65,7 +72,8 @@ func show_death_gui():
 
 func show_start_gui():
 	var death_gui = preload("res://scenes/StartScreen.tscn")
-	$GUI.add_child(death_gui.instance())
+	var death_instance = death_gui.instance()
+	$GUI.add_child(death_instance)
 
 func restart():
 	get_tree().reload_current_scene()
@@ -81,3 +89,9 @@ func clear_gui():
 	for i in range(0, $GUI.get_child_count()):
 		$GUI.get_child(i).queue_free()
 		
+
+func timer_death_gui():
+	deathTimer.start()
+	
+func _on_DeathTimer_timeout():
+	show_death_gui()

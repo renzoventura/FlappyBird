@@ -15,14 +15,11 @@ func _on_retry_gui_input(event):
 
 func _on_retry_mouse_entered():
 	pass
-#	print("enter")
-#	retry_button.add_color_override("font_color", WHITE)
 
 func _on_retry_mouse_exited():
 	pass
-#	print("exit")
-#	retry_button.add_color_override("font_color", BLACK)
 		
 func _input(event):
 	if event.is_action_pressed("up"):
+		BackgroundMusicScene.POINTS = 0
 		get_tree().call_group("Level", "restart")
