@@ -4,7 +4,7 @@ extends Node2D
 var SPEED
 var DEFAULT_SPEED = 4
 var motion = Vector2(0,0)
-var gap_sizes = [1006, 1050, 1200, 1100]
+var gap_sizes = [1010, 1050, 1200, 1100]
 var random_centers = [-50 ,0, 50, 100, 150, 200, 250, 300, 350, 400, 450]
 var current_gap_size;
 var is_moving = true
